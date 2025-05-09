@@ -1,12 +1,14 @@
 {
   "name": "notes-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Full stack notes application",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "cd frontend && npm install && npm run build",
+    "preview": "vite preview",
+    "start": "cd backend && uvicorn app.main:app --host=0.0.0.0 --port=${PORT:-8000}"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -18,5 +20,9 @@
     "@vitejs/plugin-react": "^4.0.0",
     "typescript": "^5.0.0",
     "vite": "^4.0.0"
+  },
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
   }
 }
